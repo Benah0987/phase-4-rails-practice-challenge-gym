@@ -1,8 +1,6 @@
+# config/routes.rb
 Rails.application.routes.draw do
-  get 'client/index'
-  get 'client/show'
-  get 'gym/show'
-  get 'gym/delete'
-  get 'memebership/create'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :gyms, only: [:index, :show, :destroy, :update]
+  resources :clients, only: [:index, :show, :destroy, :update]
+  resources :memberships, only: [:create]
 end
